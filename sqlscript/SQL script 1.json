@@ -2,13 +2,13 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "create table eventhubs\n(\nCountry varchar(100),\nCity varchar(100),\nDate varchar(100),\nTemperature varchar(100),\nHumidity varchar(100),\nWindSpeed varchar(100),\nWindDirection varchar(100),\nPrecipitation varchar(100),\nCloudCover varchar(100),\nVisibility varchar(100),\nPressure varchar(100),\nDewPoint varchar(100),\nUVIndex varchar(100),\nSunrise varchar(100),\nSunset varchar(100),\nMoonrise varchar(100),\nMoonset varchar(100),\nMoonPhase varchar(100),\nConditions varchar(100),\nIcon varchar(100),\nEventProcessedUtcTime varchar(100),\nPartitionId varchar(100),\nEventEnqueuedUtcTime varchar(100)\n)\n\nselect * from eventhubs\n",
+			"query": "",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "dp203dedicatedsqlpoo;",
-				"poolName": "dp203dedicatedsqlpoo;"
+				"databaseName": "dp203synapsedb",
+				"poolName": "Built-in"
 			},
 			"resultLimit": 5000
 		},
