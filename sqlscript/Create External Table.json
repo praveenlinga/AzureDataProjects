@@ -1,0 +1,17 @@
+{
+	"name": "Create External Table",
+	"properties": {
+		"content": {
+			"query": "CREATE DATABASE DP203;\n\nCREATE MASTER KEY ENCRYPTION BY PASSWORD = 'JBL@1234'\n\nCREATE EXTERNAL DATA SOURCE CSV\nWITH\n(\n    LOCATION = 'https://dp203sacompany.blob.core.windows.net/container'\n)\n\nCREATE EXTERNAL FILE FORMAT CSV\nWITH(\n    FORMAT_TYPE = DELIMITEDTEXT,\n    FORMAT_OPTIONS(\n        FIELD_TERMINATOR = ',',\n        FIRST_ROW = 2\n    )\n)\n\nCREATE EXTERNAL FILE FORMAT PARQUETFORMAT\nWITH(\n    FORMAT_TYPE = PARQUET\n)",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "DP203",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

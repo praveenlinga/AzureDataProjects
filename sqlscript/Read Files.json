@@ -1,0 +1,17 @@
+{
+	"name": "Read Files",
+	"properties": {
+		"content": {
+			"query": "SELECT * FROM \nOPENROWSET\n(\n    BULK 'https://dp203sacompany.blob.core.windows.net/container/ActivityLog01.csv',\n    FORMAT = 'CSV',\n    PARSER_VERSION = '2.0',\n    HEADER_ROW = TRUE\n) AS [RESULT]\n\nSELECT \nJSON_VALUE(jsonContent,'$.Correlationid') as Correlationid,\nJSON_VALUE(jsonContent, '$.Operationname') as Operationname\n FROM \nOPENROWSET(\n    BULK 'https://dp203sacompany.blob.core.windows.net/container/ActivityLog-01.json',\n    FORMAT = 'CSV',\n    FIELDTERMINATOR = '0x0b',\n    FIELDQUOTE = '0x0b',\n    ROWTERMINATOR = '0x0a'\n) WITH (\n    jsonContent varchar(max)\n) as [json]\n\nSELECT * FROM\nOPENROWSET (\n    BULK 'https://dp203sacompany.blob.core.windows.net/container/ActivityLog01.parquet',\n    FORMAT =  'PARQUET'\n) AS [PARQUETFILE]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
