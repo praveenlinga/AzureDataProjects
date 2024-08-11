@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "dp203asa1"
+		},
+		"dp203asa-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:dp203asa.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"dp203asa1-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:dp203asa1.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"dp203companyexternal_accountKey": {
+			"value": ""
+		},
+		"dp203asa-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://dp203saasa.dfs.core.windows.net"
+		},
+		"dp203asa1-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://dp203saasa.dfs.core.windows.net"
+		},
+		"dp203companyexternal_properties_typeProperties_url": {
+			"value": "https://dp203sacompany.dfs.core.windows.net/"
+		}
+	}
+}
